@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var fortunes = [1,2,3,4,5,6,7];
+
 // 设置handlebars模板引擎
 var handlebars = require('express-handlebars').create({defaultLayout: 'main'});
 app.engine('handlebars',handlebars.engine);
@@ -22,7 +23,6 @@ app.get('/about', function (req,res){
 
 // 定制404页面
 app.use(function (req,res){
-    // res.type('text/plain');
     res.status(404);
     res.render('404');
 });
