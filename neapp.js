@@ -8,7 +8,7 @@ app.engine('handlebars',handlebars.engine);
 app.set('view engine', 'handlebars');
 
 // 设置静态文件
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); 
 
 app.set('port',process.env.PORT || 3000);
 
@@ -30,7 +30,6 @@ app.use(function (req,res){
 // 定制500页面
 app.use(function (err,req,res,next){
     console.error(err.stack);
-    // res.type('text/plain');
     res.status(500);
     res.render('500');
 });
