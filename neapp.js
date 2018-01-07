@@ -8,7 +8,7 @@ app.engine('handlebars',handlebars.engine);
 app.set('view engine', 'handlebars');
 
 // 设置静态文件
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/public'));
 
 app.set('port',process.env.PORT || 3000);
 
@@ -37,3 +37,4 @@ app.use(function (err,req,res,next){
 app.listen(app.get('port'),function (){
     console.log('Express started on http://localhost'+app.get('port') + ';');
 });
+
